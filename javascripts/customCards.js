@@ -1,14 +1,14 @@
 "use strict";
-// 1. Create one global variable (e.g. `CarLot`) and use the IIFE pattern to augment it two times in separate JavaScript files.
 var CarLot = (function (oldCarLot) {
-  var inventory = [];
 
-  oldCarLot.resetStyle = function () {
-
-  };
-  oldCarLot.addStyle = function(border, color){
+  oldCarLot.resetCard = function (cardID) {
 
   };
+
+  oldCarLot.formatCard = function (cardID, bgColor) {
+
+  };
+
   return oldCarLot;
 
 })(CarLot || {});

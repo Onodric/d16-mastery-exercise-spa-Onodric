@@ -5,17 +5,49 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
+    <title>Buy a Car!</title>
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" integrity="sha384-AysaV+vQoT3kOAXZkl02PThvDr8HYKPZhNT5h/CXfBThSRXQ6jW5DO2ekP5ViFdi" crossorigin="anonymous">
   </head>
   <body>
-    <h1>Hello, world!</h1>
+    <header class="page-header container-fluid">
+<!-- 4. Put a standard Bootstrap navbar element at the top of your page. -->
+      <nav class="navbar navbar-light bg-faded row">
+        <a class="navbar-brand col-md-3" href="#">
+          <h1>Otto's Autos</h1><small>and Vinnies Vans</small>
+        </a>
+        <ul class="nav navbar-nav col-md-3">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Some Cars!<span class="sr-only">(current)</span></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Some More Cars!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Email Us!</a>
+          </li>
+        </ul>
+<!-- 5. Put a text input field in the navigation bar. -->
+        <input class="form-control col-md-5" type="text" placeholder="Search">
+      </nav>
+    </header>
+
+    <div class="container">
+      <div class="row" id="insert">
+
+      </div>
+    </div>
+
 
     <!-- jQuery first, then Tether, then Bootstrap JS. -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js" integrity="sha384-3ceskX3iaEnIogmQchP8opvBy3Mi7Ce34nWjpBIwVTHfGYWQS9jwHDVRnpKKHJg7" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.3.7/js/tether.min.js" integrity="sha384-XTs3FgkjiBgo8qjEjBk0tGmf3wPrWtA6coPfQDfFEY8AnYJwjalXCiosYRBIBZX8" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.5/js/bootstrap.min.js" integrity="sha384-BLiI7JTZm+JWlgKa0M0kGRpJbF2J8q+qreVrKBC47e3K6BW78kGLrCkeRX6I9RoK" crossorigin="anonymous"></script>
+    <script src="javascripts/carlot.js"></script>
+    <!-- <script src="javascripts/customCards.js"></script> -->
+    <!-- <script src="javascripts/activateEvents.js"></script> -->
+    <!-- <script src="javascripts/eventHandler.js"></script> -->
+    <script src="javascripts/quiz.js"></script>
   </body>
 </html>
 
@@ -23,8 +55,6 @@
 <!-- You operate a used car lot, and need to have an application where you can update the description and availability of each car in your inventory. You are going to using the Bootstrap grid to lay out your HTML structure. -->
 
 <!-- 3. Loop over your array of cars and build up an HTML string to build a card for each car. Also, use Bootstrap to create rows. Each row should contain 3 columns. Make sure you have a parent element with a class of `container`. Hint: You must build up the entire string of columns/rows before injecting into the DOM. Use a counter variable to know when to close a row after three columns. -->
-<!-- 4. Put a standard Bootstrap navbar element at the top of your page. -->
-<!-- 5. Put a text input field in the navigation bar. -->
 <!-- 6. Make sure you display all properties of the car in the DOM. Basic styling is up to you. -->
 <!-- 7. Make sure that each car card element has a CSS class which adds a black border around it. -->
 <!-- ### Behavior -->
