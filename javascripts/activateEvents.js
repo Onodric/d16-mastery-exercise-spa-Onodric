@@ -3,16 +3,29 @@
 var CarLot = (function (oldCarLot) {
   var inventory = [];
 
-  oldCarLot.resetStyle = function () {
+  oldCarLot.activateEvents = function () {
+    var cards = document.getElementsByClassName("car-card");
+    var textBox = document.getElementById("descText");
+    for (let i = 0; i < cards.length; i++){
+      cards[i].addEventListener("click", function(){
+        textBox.focus();
+        textBox.value = '';
+        editTarget = event.currentTarget;
+        for (let j = 0; j < cards.length; j++){
+          CarLot.resetCard(cards[j]);
+        }
+        CarLot.formatCard(cards[i], "#a2d2d2");
+      });
+    }
 
+    document.getElementById("descText").addEventListener("keyup", function(){
+      descText = event.target.value;
+      editTarget.getElementsByClassName("description")[0].innerHTML = descText;
+    });
   };
-  oldCarLot.addStyle = function(border, color){
 
-  };
   return oldCarLot;
 
 })(CarLot || {});
 
-// 4. The final IIFE should augment the object with two more functions. One function resets the border thickness and background color for each car element back to the original values. The other function changes the thickness of the border of a car element, and changes its background color. The function must accept two arguments.
-    // 1. A car DOM element that was clicked on.
-    // 2. A color name of your choice (see behavior requirement 5 above).
+// 3. The second IIFE should augment the original one with a function that creates all of the `eventHandlers` that you need for the application. Name the function `activateEvents`.

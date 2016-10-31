@@ -404,4 +404,32 @@ body {
     font-weight: bold;
     margin: auto; }
 
+.car-card {
+  border: 2px solid black;
+  border-radius: 1em;
+  height: 22em;
+  padding: 1em; }
+
+nav h1 {
+  margin: 0; }
+
+.nav-link {
+  margin-top: 1.5em; }
+
+nav input {
+  padding: .25em;
+  margin-top: 1.25em; }
+
+header {
+  height: 15vh; }
+
+footer {
+  padding-top: .25em;
+  height: 5vh;
+  text-align: center; }
+
+#insert {
+  height: 80vh;
+  overflow-y: auto; }
+
 /*# sourceMappingURL=style.css.map */
