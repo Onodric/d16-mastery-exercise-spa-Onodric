@@ -12,7 +12,6 @@ function populatePage (inventory) {
     if (i % 3 === 0){
       tempAddition += '<div class="row">';
     } 
-    console.log("Loop running: ", i);
     tempAddition += '<div class="car-card col-md-4 ' + i + '" id="';
     tempAddition += inventory[i].inventoryNum;
     tempAddition += '"><div class="panel panel-default">';
@@ -38,8 +37,7 @@ function populatePage (inventory) {
     if ( i > 0 && (i + 1) % 3 === 0) {
       tempAddition += '</div><!-- end of row -->';
     }
-    console.log("adding: ", tempAddition);
-    }
+  }
   insert.innerHTML += tempAddition;
   // Now that the DOM is loaded, establish all the event listeners needed
   CarLot.activateEvents();
