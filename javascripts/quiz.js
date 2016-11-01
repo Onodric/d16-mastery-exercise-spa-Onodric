@@ -4,12 +4,18 @@ var editTarget;
 var descText = '';
 
 function populatePage (inventory) {
+  // we have a main div
+  // build one massive string to insert there
   // Loop over the inventory and populate the page
+  var tempAddition = '';
   for (let i = 0; i < inventory.length; i++){
-    var tempAddition = '';
-    tempAddition += '<div class="car-card col-md-4" id="';
+    if (i % 3 === 0){
+      tempAddition += '<div class="row">';
+    } 
+    console.log("Loop running: ", i);
+    tempAddition += '<div class="car-card col-md-4 ' + i + '" id="';
     tempAddition += inventory[i].inventoryNum;
-    tempAddition += '><div class="panel panel-default">';
+    tempAddition += '"><div class="panel panel-default">';
     tempAddition += '<div class="panel-heading"><h3 class="panel-title">';
     tempAddition += inventory[i].year;
     tempAddition += ' ';
@@ -24,16 +30,19 @@ function populatePage (inventory) {
     tempAddition += inventory[i].interiorMaterial;
     tempAddition += '</p><p class="description">';
     tempAddition += inventory[i].description;
-    tempAddition += '</div><div class="panel-footer"><p>$ ';
+    tempAddition += '</p></div><div class="panel-footer"><p>$ ';
     tempAddition += inventory[i].price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
     tempAddition += '</p><p>Inventory # ';
     tempAddition += inventory[i].inventoryNum;
-    tempAddition += '</p></div></div></div>';
-    insert.innerHTML += tempAddition;
-  }
+    tempAddition += '</p></div></div></div><!-- end of card -->';
+    if ( i > 0 && (i + 1) % 3 === 0) {
+      tempAddition += '</div><!-- end of row -->';
+    }
+    console.log("adding: ", tempAddition);
+    }
+  insert.innerHTML += tempAddition;
   // Now that the DOM is loaded, establish all the event listeners needed
   CarLot.activateEvents();
-
 }
 
 // Load the inventory and send a callback function to be
