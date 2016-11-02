@@ -1,7 +1,9 @@
 "use strict";
+/* jshint -W097 */
 // 1. Create one global variable (e.g. `CarLot`) and use the IIFE pattern to augment it two times in separate JavaScript files.
 var CarLot = (function (oldCarLot) {
   var inventory = [];
+  var styleToggle = false;
 
   oldCarLot.activateEvents = function () {
     var cards = document.getElementsByClassName("car-card");
@@ -19,8 +21,12 @@ var CarLot = (function (oldCarLot) {
     }
 
     document.getElementById("descText").addEventListener("keyup", function(){
+      if (!editTarget){
+        alert("Please choose a car...");
+      } else {
       descText = event.target.value;
       editTarget.getElementsByClassName("description")[0].innerHTML = descText;
+      }
     });
   };
 

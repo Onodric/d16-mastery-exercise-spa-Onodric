@@ -12,9 +12,9 @@ function populatePage (inventory) {
     if (i % 3 === 0){
       tempAddition += '<div class="row">';
     } 
-    tempAddition += '<div class="car-card col-md-4 ' + i + '" id="';
-    tempAddition += inventory[i].inventoryNum;
-    tempAddition += '"><div class="panel panel-default">';
+    tempAddition += '<div class="col-xs-4 ' + i + '" id="';
+    tempAddition += inventory[i].inventoryNum + i;
+    tempAddition += '"><div class="car-card col-xs-12"><div class="panel panel-default">';
     tempAddition += '<div class="panel-heading"><h3 class="panel-title">';
     tempAddition += inventory[i].year;
     tempAddition += ' ';
@@ -33,7 +33,7 @@ function populatePage (inventory) {
     tempAddition += inventory[i].price.toFixed(2).replace(/(\d)(?=(\d{3})+\.)/g, '$1,');
     tempAddition += '</p><p>Inventory # ';
     tempAddition += inventory[i].inventoryNum;
-    tempAddition += '</p></div></div></div><!-- end of card -->';
+    tempAddition += '</p></div></div></div></div><!-- end of card -->';
     if ( i > 0 && (i + 1) % 3 === 0) {
       tempAddition += '</div><!-- end of row -->';
     }

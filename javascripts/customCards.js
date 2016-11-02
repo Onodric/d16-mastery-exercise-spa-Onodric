@@ -2,11 +2,13 @@
 var CarLot = (function (oldCarLot) {
 
   oldCarLot.resetCard = function (cardID) {
+    cardID.classList.remove("editing");
     cardID.style.border="2px solid black";
     cardID.style.background="white";
   };
 
   oldCarLot.formatCard = function (cardID, bgColor) {
+    cardID.classList.add("editing");
     cardID.style.border="8px solid black";
     cardID.style.background=bgColor;
   };
